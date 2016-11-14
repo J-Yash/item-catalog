@@ -12,4 +12,4 @@ How to run this project?
     #Run the command "python database_setup.py" (without quotation marks) in the cmd line window (make sure you are in the same directory in the cmd line window) to create the SQLite database
     #Run the command "python project.py" (without quotation marks) in the cmd line window (make sure you are in the same directory in the cmd line window) to run the project.
     # Go to localhost:8081/bakeries
-    #Play around
+    #Play around 
