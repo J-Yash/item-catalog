@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "menubar.html" %}
+
+<div class="body">
+    <h2>New Menu Item </h2>
+    <br><br>
+    <form action="#" method = "post">
+        <div class="form-group forms">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+            <label for="name">Name:</label>
+            <input type ="text" maxlength="50" class="form-control" name="name" placeholder="Name of the course">
+
+            <label for="description">Description:</label>
+            <textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the course"></textarea>
+
+            <label for="price">Price:</label>
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type ="text" class="form-control" maxlength="10" name="price" placeholder="Price in $">
+            </div>
+            <br>
+            <center><button type="submit" class="btn btn-success" type="submit">
+                Create</button>
+                <button type="button" class="btn btn-danger cancelbutton" id="cancel" type="button"><a href="{{url_for('showBakeries')}}">Cancel</a>
+                </button>
+            </center>
+        </div>
+    </form>
+
+
+</div>
+
+
+{% include "footer.html" %}
+{% endblock %}

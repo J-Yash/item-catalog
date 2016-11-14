@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "menubar.html" %}
+
+<div class="body">
+    <h2>New Bakery</h2>
+    <br>
+    <form action="#" method = "post">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <div class="form-group forms">
+            <label for="name">Name:</label>
+            <input type ="text" class="form-control" maxlength="100" name="name">
+            <br>
+            <center><button type="submit" class="btn btn-success" id="submit" type="submit">Submit
+            </button>
+            <button type="button" class="btn btn-danger cancelbutton" id="cancel" type="button"><a href="{{url_for('showBakeries')}}">Cancel</a>
+            </button></center>
+        </div>
+    </form>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}

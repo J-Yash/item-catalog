@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "menubar.html" %}
+
+<div class="body">
+    <h2> Are you sure you want to delete <strong><em>"{{bakery.name}}"? </em></strong></h2>
+    <br><br>
+
+    <form action="#" method = 'post'>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <center><button type="submit" class="btn btn-danger btn-lg" id="submit" type="submit">
+            Delete</button>
+            <button type="button" class="btn btn-lg btn-info cancelbutton" id="cancel" type="button"><a href="{{url_for('showBakeries')}}">Do Not Delete</a>
+            </button>
+        </center>
+
+
+    </form>
+
+</div>
+{% include "footer.html" %}
+{% endblock %}

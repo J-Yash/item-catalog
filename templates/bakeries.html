@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "menubar.html" %}
+
+<div class="body">
+    <h2>All Bakeries</h2>
+    <br>
+    <div class="row bakeryname">
+        {% for bakery in bakeries %}
+
+
+        <div class="col-md-4 bakeryitem"><h4><a href="{{url_for('showMenu', bakery_id=bakery.id)}}">{{bakery.name}}</a></h4>
+            <h5><a href="{{url_for('editBakery', bakery_id=bakery.id)}}">edit</a></h5>
+            <h5><a href="{{url_for('deleteBakery', bakery_id=bakery.id)}}">delete</a></h5>
+        </div>
+
+
+        {% endfor %}
+    </div>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}

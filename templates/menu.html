@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "menubar.html" %}
+
+<div class="body">
+    <h2>Menu for <em>"{{bakery.name}}"</em></h2>
+    <h4><a href="{{url_for('newMenuItem', bakery_id=bakery.id)}}">Add Item</a></h4><br><br>
+    <div class="row bakeryname">
+        {% for i in items %}
+        <div class="col-md-4 bakerymenuitem">
+            <label>Name:</label>{{i.name}}<br>
+            <label>Description:</label>{{i.description}}<br>
+            <label>Price:$</label>{{i.price}}<br>
+            <h5><a href="{{url_for('editMenuItem', bakery_id=bakery.id, menu_id=i.id)}}">Edit Item</a></h5>
+            <h5><a href="{{url_for('deleteMenuItem', bakery_id=bakery.id, menu_id=i.id)}}">Delete Item</a></h5>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</div>
+
+{% include "footer.html" %}
+{% endblock %}

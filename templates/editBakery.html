@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "menubar.html" %}
+
+<div class="body">
+    <h2>Edit Bakery</h2>
+    <br><br>
+    <form action="{{ url_for('editBakery',bakery_id = bakery.id)}}" method = "post">
+        <div class="form-group forms">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+            <label for="name">Name:</label>
+            <input type ="text" class="form-control" maxlength="100" name="name" value="{{bakery.name}}">
+            <br>
+            <center><button type="submit" class="btn btn-success" id="submit" type="submit">Update
+            </button>
+            <button type="button" class="btn btn-danger cancelbutton" id="cancel" type="button"><a href="{{url_for('showBakeries')}}">Cancel</a>
+            </button></center>
+        </div>
+    </form>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}
